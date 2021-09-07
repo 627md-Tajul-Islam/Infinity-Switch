@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+    <defs>
+        <filter id="shadow" x="-100%" y="-100%" width="250%" height="250%">
+            <feOffset in="SourceAlpha" dx="4" dy="23" result="offsetOut"></feOffset>
+            <feFlood id="glowAlpha" flood-color="red" flood-opacity="1"></feFlood>
+            <feGaussianBlur stdDeviation="4" in="offsetOut" result="drop" />
+            <feBlend in="SourceGraphic" in2="drop" mode="normal" />
+        </filter>
+
+        <filter id="glow" x="-100%" y="-100%" width="250%" height="250%">
+            <feGaussianBlur stdDeviation="15 3" result="coloredBlur" />
+            <feOffset dx="10" dy="23" result="offsetblur"></feOffset>
+            <feFlood id="glowAlpha" flood-color="#000" flood-opacity="0.41"></feFlood>
+            <feComposite in2="offsetblur" operator="in"></feComposite>
+            <feMerge>
+                <feMergeNode/>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+        <path class="path" d="M371.9,276.2c-32.6-27.6-71.8-53.4-106.3-53.4c-42.5,0-77.2,34.6-77.2,77.1v0.1c0,42.5,34.6,77.1,77.2,77.1
+	c34.5,0,73.4-25,106.3-53.4l56.3-47.5c32.6-27.6,71.8-53.4,106.3-53.4c42.5,0,77.2,34.6,77.2,77.1v0.1c0,42.5-34.6,77.1-77.2,77.1
+	c-34.5,0-73.4-25-106.3-53.4L371.9,276.2z"  stroke="#333" stroke-width="10"/>
+    </defs>
+    <g class="whole" filter="url(#glow)">
+        <path d="M371.86,276.23c-32.64-27.55-71.85-53.44-106.31-53.44a77.24,77.24,0,0,0-77.16,77.14v.14a77.24,77.24,0,0,0,77.16,77.14c34.46,0,73.36-25,106.31-53.44"  stroke="#000" stroke-miterlimit="10" stroke-width="10"/>
+        <path d="M428.14,276.23c32.64-27.55,71.85-53.44,106.31-53.44a77.24,77.24,0,0,1,77.16,77.14v.14a77.24,77.24,0,0,1-77.16,77.14c-34.46,0-73.36-25-106.31-53.44"  stroke="#000" stroke-miterlimit="10" stroke-width="10"/>
+        <path id="switch" d="M371.86,323.77l56.28-47.54"  stroke="#000" stroke-miterlimit="10" stroke-width="10"/>
+        <circle class="dot" cx="0" cy="0" r="8" fill="#4EA8D3"/>
+
+    </g>
+</svg>
+</body>
+</html>
